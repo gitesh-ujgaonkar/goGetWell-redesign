@@ -25,23 +25,25 @@ export default function Hero() {
             </div>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white w-full sm:w-auto">
-                Request Demo
+                Get Started
               </Button>
-              <Button size="lg" variant="outline" className="dark:text-white dark:border-gray-700 w-full sm:w-auto">
-                Learn More
-              </Button>
+        
             </div>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-3 sm:space-y-0 pt-4">
-              <p className="text-sm text-gray-500 dark:text-gray-400">Trusted by healthcare providers worldwide</p>
-              <div className="flex -space-x-2">
-                {[1, 2, 3].map((i) => (
-                  <div
-                    key={i}
-                    className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 border-2 border-white dark:border-gray-800"
-                  />
-                ))}
-              </div>
-            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 text-center">
+          <div>
+            <div className="text-3xl md:text-4xl font-extrabold text-teal-600">21++</div>
+            <div className="text-sm md:text-base text-gray-500 dark:text-gray-400">Qualified Doctors</div>
+          </div>
+          <div>
+            <div className="text-3xl md:text-4xl font-extrabold text-teal-600">1000+</div>
+            <div className="text-sm md:text-base text-gray-500 dark:text-gray-400">Hospitals</div>
+          </div>
+          <div>
+            <div className="text-3xl md:text-4xl font-extrabold text-teal-600">800+</div>
+            <div className="text-sm md:text-base text-gray-500 dark:text-gray-400">Treatment Plans</div>
+          </div>
+      </div>
+
           </motion.div>
           <motion.div
             className="flex justify-center"
