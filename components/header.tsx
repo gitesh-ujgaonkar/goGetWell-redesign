@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useMediaQuery } from "@/hooks/use-mobile"
 import { ThemeToggle } from "./theme-toggle"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -18,6 +18,18 @@ export default function Header() {
       setIsMenuOpen(false)
     }
   }, [isMobile])
+
+  // Prevent scrolling when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "unset"
+    }
+    return () => {
+      document.body.style.overflow = "unset"
+    }
+  }, [isMenuOpen])
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -98,67 +110,81 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <motion.div
-          className="md:hidden fixed inset-0 top-16 z-50 bg-white dark:bg-gray-900 p-4 flex flex-col gap-6"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.2 }}
-        >
-          <nav className="flex flex-col gap-4">
-            <Link
-              href="#features"
-              className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <>
+            {/* Background Blur Layer */}
+            <motion.div 
+              className="md:hidden fixed inset-0 top-16 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            />
+            
+            {/* Menu Content */}
+            <motion.div
+              className="md:hidden fixed inset-0 top-16 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-2xl p-6 flex flex-col gap-8"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
             >
-              Features
-            </Link>
-            <Link
-              href="#about"
-              className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About Us
-            </Link>
-            <Link
-              href="#solutions"
-              className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Solutions
-            </Link>
-            <Link
-              href="#testimonials"
-              className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Testimonials
-            </Link>
-            <Link
-              href="#faq"
-              className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              FAQ
-            </Link>
-            <Link
-              href="#contact"
-              className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </Link>
-          </nav>
-          <div className="flex flex-col gap-2 mt-auto">
-            <Button variant="outline" className="w-full dark:border-gray-700 dark:text-gray-300">
-              Log In
-            </Button>
-            <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white">Get Started</Button>
-          </div>
-        </motion.div>
-      )}
+              <nav className="flex flex-col gap-4">
+                <Link
+                  href="#features"
+                  className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Features
+                </Link>
+                <Link
+                  href="#about"
+                  className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About Us
+                </Link>
+                <Link
+                  href="#solutions"
+                  className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Solutions
+                </Link>
+                <Link
+                  href="#testimonials"
+                  className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Testimonials
+                </Link>
+                <Link
+                  href="#faq"
+                  className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  FAQ
+                </Link>
+                <Link
+                  href="#contact"
+                  className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              </nav>
+              <div className="flex flex-col gap-3 mt-auto">
+                <Button variant="outline" className="w-full dark:border-gray-700 dark:text-gray-300">
+                  Log In
+                </Button>
+                <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white">Get Started</Button>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </header>
   )
 }
