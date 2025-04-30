@@ -112,83 +112,88 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Independent Mobile Menu (overlay) */}
+      {/* Independent Mobile Menu (dropdown) */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div 
-            className="fixed inset-0 z-[100] bg-black flex flex-col"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <div className="flex items-center justify-between px-6 h-16 border-b border-gray-800">
-              <span className="text-xl font-bold text-teal-500">GoGetWell AI</span>
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                onClick={toggleMenu} 
-                className="text-white"
-              >
-                <X className="h-6 w-6" />
-              </Button>
-            </div>
+          <>
+            {/* Backdrop for closing when clicking outside */}
+            <motion.div 
+              className="fixed inset-0 z-[90] bg-black/50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMenuOpen(false)}
+            />
             
-            <div className="flex-1 flex flex-col justify-between p-6 overflow-y-auto">
-              <nav className="space-y-6 pt-6">
-                <Link
-                  href="#features"
-                  className="block text-2xl font-medium text-white hover:text-teal-400"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Features
-                </Link>
-                <Link
-                  href="#about"
-                  className="block text-2xl font-medium text-white hover:text-teal-400"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About Us
-                </Link>
-                <Link
-                  href="#solutions"
-                  className="block text-2xl font-medium text-white hover:text-teal-400"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Solutions
-                </Link>
-                <Link
-                  href="#testimonials"
-                  className="block text-2xl font-medium text-white hover:text-teal-400"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Testimonials
-                </Link>
-                <Link
-                  href="#faq"
-                  className="block text-2xl font-medium text-white hover:text-teal-400"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  FAQ
-                </Link>
-                <Link
-                  href="#contact"
-                  className="block text-2xl font-medium text-white hover:text-teal-400"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Contact
-                </Link>
-              </nav>
-              
-              <div className="py-6 space-y-4">
-                <Button variant="outline" className="w-full h-14 text-xl text-white border-gray-700 hover:bg-gray-800">
-                  Log In
-                </Button>
-                <Button className="w-full h-14 text-xl bg-teal-600 hover:bg-teal-700 text-white">
-                  Get Started
-                </Button>
+            {/* Dropdown Menu Panel */}
+            <motion.div
+              className="fixed top-[3.5rem] right-4 z-[100] w-[85vw] max-w-[320px] bg-gray-950 border border-gray-800 rounded-xl shadow-xl overflow-hidden"
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="max-h-[70vh] overflow-y-auto">
+                <div className="px-4 py-3 border-b border-gray-800">
+                  <span className="text-lg font-bold text-teal-500">Navigation</span>
+                </div>
+                
+                <nav className="p-2">
+                  <Link
+                    href="#features"
+                    className="flex items-center rounded-lg px-4 py-3 text-white hover:bg-gray-800 hover:text-teal-400"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Features
+                  </Link>
+                  <Link
+                    href="#about"
+                    className="flex items-center rounded-lg px-4 py-3 text-white hover:bg-gray-800 hover:text-teal-400"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    About Us
+                  </Link>
+                  <Link
+                    href="#solutions"
+                    className="flex items-center rounded-lg px-4 py-3 text-white hover:bg-gray-800 hover:text-teal-400"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Solutions
+                  </Link>
+                  <Link
+                    href="#testimonials"
+                    className="flex items-center rounded-lg px-4 py-3 text-white hover:bg-gray-800 hover:text-teal-400"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Testimonials
+                  </Link>
+                  <Link
+                    href="#faq"
+                    className="flex items-center rounded-lg px-4 py-3 text-white hover:bg-gray-800 hover:text-teal-400"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    FAQ
+                  </Link>
+                  <Link
+                    href="#contact"
+                    className="flex items-center rounded-lg px-4 py-3 text-white hover:bg-gray-800 hover:text-teal-400"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Contact
+                  </Link>
+                </nav>
+                
+                <div className="px-3 py-3 border-t border-gray-800 space-y-2">
+                  <Button variant="outline" className="w-full border-gray-700 text-white hover:bg-gray-800">
+                    Log In
+                  </Button>
+                  <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white">
+                    Get Started
+                  </Button>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
