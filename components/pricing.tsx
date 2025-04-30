@@ -132,6 +132,10 @@ export default function Pricing() {
     }
   ]
 
+  const handleTabChange = (value: string) => {
+    setBillingPeriod(value as "monthly" | "annually")
+  }
+
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800" id="pricing">
       <div className="container px-4 md:px-6">
@@ -155,25 +159,17 @@ export default function Pricing() {
           
           {/* Billing toggle */}
           <div className="flex items-center space-x-4 mt-4">
-            <TabsList className="grid w-56 grid-cols-2">
-              <TabsTrigger 
-                value="monthly" 
-                onClick={() => setBillingPeriod("monthly")}
-                className={billingPeriod === "monthly" ? "bg-teal-600 text-white" : ""}
-              >
-                Monthly
-              </TabsTrigger>
-              <TabsTrigger 
-                value="annually" 
-                onClick={() => setBillingPeriod("annually")}
-                className={billingPeriod === "annually" ? "bg-teal-600 text-white" : ""}
-              >
-                <span>Annual</span>
-                <span className="ml-2 bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-xs px-2 py-0.5 rounded-full">
-                  33% off
-                </span>
-              </TabsTrigger>
-            </TabsList>
+            <Tabs value={billingPeriod} onValueChange={handleTabChange} className="w-56">
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="monthly">Monthly</TabsTrigger>
+                <TabsTrigger value="annually">
+                  <span>Annual</span>
+                  <span className="ml-2 bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-xs px-2 py-0.5 rounded-full">
+                    33% off
+                  </span>
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
           </div>
         </motion.div>
 
