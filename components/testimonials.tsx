@@ -12,36 +12,22 @@ export default function Testimonials() {
         "GoGetWell AI has transformed our medical tourism business. The AI-powered platform has increased our patient inquiries by 200% in just three months, and the conversion rate has improved significantly.",
       author: "Dr. Sarah Johnson",
       role: "Medical Director, Global Health Solutions",
-      avatar: "/placeholder.svg?height=100&width=100",
       company: "Global Health Solutions",
-      logo: "/placeholder.svg?height=40&width=120",
     },
     {
       quote:
         "The intelligent agents have made patient communication seamless. We're able to provide 24/7 support without increasing our staff overhead. Our patients love the immediate responses and personalized care.",
       author: "Michael Chen",
       role: "CEO, MedTravel Connect",
-      avatar: "/placeholder.svg?height=100&width=100",
       company: "MedTravel Connect",
-      logo: "/placeholder.svg?height=40&width=120",
     },
     {
       quote:
         "Our digital storefront looks professional and has significantly improved our conversion rates. The platform is intuitive and easy to customize, allowing us to showcase our specialized treatments to a global audience.",
       author: "Priya Sharma",
       role: "Marketing Manager, Wellness International",
-      avatar: "/placeholder.svg?height=100&width=100",
       company: "Wellness International",
-      logo: "/placeholder.svg?height=40&width=120",
     },
-  ]
-
-  const companyLogos = [
-    "/placeholder.svg?height=40&width=120",
-    "/placeholder.svg?height=40&width=120",
-    "/placeholder.svg?height=40&width=120",
-    "/placeholder.svg?height=40&width=120",
-    "/placeholder.svg?height=40&width=120",
   ]
 
   return (
@@ -82,7 +68,7 @@ export default function Testimonials() {
                   <div className="flex items-center gap-4 mt-4">
                     <div className="rounded-full overflow-hidden h-12 w-12 border border-gray-200 dark:border-gray-700 flex-shrink-0">
                       <Image
-                        src={testimonial.avatar || "/placeholder.svg"}
+                        src="/empty-dp.png"
                         alt={testimonial.author}
                         width={48}
                         height={48}
@@ -94,46 +80,11 @@ export default function Testimonials() {
                       <p className="text-sm text-gray-500 dark:text-gray-400 truncate">{testimonial.role}</p>
                     </div>
                   </div>
-                  <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
-                    <Image
-                      src={testimonial.logo || "/placeholder.svg"}
-                      alt={testimonial.company}
-                      width={120}
-                      height={40}
-                      className="object-contain h-8 dark:opacity-90"
-                    />
-                  </div>
                 </CardContent>
               </Card>
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <p className="text-center text-gray-500 dark:text-gray-400 mb-6">Trusted by leading healthcare providers</p>
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
-            {companyLogos.map((logo, index) => (
-              <div
-                key={index}
-                className="grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-              >
-                <Image
-                  src={logo || "/placeholder.svg"}
-                  alt="Partner company logo"
-                  width={100}
-                  height={40}
-                  className="h-8 w-auto object-contain"
-                />
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   )
