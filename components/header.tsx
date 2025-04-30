@@ -113,78 +113,80 @@ export default function Header() {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
-          <>
-            {/* Full Screen Black Overlay */}
-            <motion.div 
-              className="md:hidden fixed inset-0 top-0 z-40 bg-black/95"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            />
+          <motion.div 
+            className="md:hidden fixed inset-0 z-40 bg-black flex flex-col"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <div className="flex items-center justify-between px-6 h-16 border-b border-gray-800">
+              <span className="text-xl font-bold text-teal-500">GoGetWell AI</span>
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                onClick={toggleMenu} 
+                className="text-white"
+              >
+                <X className="h-6 w-6" />
+              </Button>
+            </div>
             
-            {/* Menu Content */}
-            <motion.div
-              className="md:hidden fixed inset-x-0 top-16 bottom-0 z-50 bg-gray-950 border-t border-gray-800 px-5 py-8 overflow-y-auto"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="max-w-md mx-auto flex flex-col min-h-[500px] justify-between">
-                <nav className="flex flex-col">
-                  <Link
-                    href="#features"
-                    className="text-xl font-medium text-white hover:text-teal-400 transition-colors py-4 border-b border-gray-800/50"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Features
-                  </Link>
-                  <Link
-                    href="#about"
-                    className="text-xl font-medium text-white hover:text-teal-400 transition-colors py-4 border-b border-gray-800/50"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    About Us
-                  </Link>
-                  <Link
-                    href="#solutions"
-                    className="text-xl font-medium text-white hover:text-teal-400 transition-colors py-4 border-b border-gray-800/50"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Solutions
-                  </Link>
-                  <Link
-                    href="#testimonials"
-                    className="text-xl font-medium text-white hover:text-teal-400 transition-colors py-4 border-b border-gray-800/50"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Testimonials
-                  </Link>
-                  <Link
-                    href="#faq"
-                    className="text-xl font-medium text-white hover:text-teal-400 transition-colors py-4 border-b border-gray-800/50"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    FAQ
-                  </Link>
-                  <Link
-                    href="#contact"
-                    className="text-xl font-medium text-white hover:text-teal-400 transition-colors py-4"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Contact
-                  </Link>
-                </nav>
-                <div className="flex flex-col gap-4 mt-10 mb-6">
-                  <Button variant="outline" className="w-full h-12 border-gray-700 text-white hover:bg-gray-800 text-lg">
-                    Log In
-                  </Button>
-                  <Button className="w-full h-12 bg-teal-600 hover:bg-teal-700 text-white text-lg">Get Started</Button>
-                </div>
+            <div className="flex-1 flex flex-col justify-between p-6 overflow-y-auto">
+              <nav className="space-y-6 pt-6">
+                <Link
+                  href="#features"
+                  className="block text-2xl font-medium text-white hover:text-teal-400"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Features
+                </Link>
+                <Link
+                  href="#about"
+                  className="block text-2xl font-medium text-white hover:text-teal-400"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About Us
+                </Link>
+                <Link
+                  href="#solutions"
+                  className="block text-2xl font-medium text-white hover:text-teal-400"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Solutions
+                </Link>
+                <Link
+                  href="#testimonials"
+                  className="block text-2xl font-medium text-white hover:text-teal-400"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Testimonials
+                </Link>
+                <Link
+                  href="#faq"
+                  className="block text-2xl font-medium text-white hover:text-teal-400"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  FAQ
+                </Link>
+                <Link
+                  href="#contact"
+                  className="block text-2xl font-medium text-white hover:text-teal-400"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              </nav>
+              
+              <div className="py-6 space-y-4">
+                <Button variant="outline" className="w-full h-14 text-xl text-white border-gray-700 hover:bg-gray-800">
+                  Log In
+                </Button>
+                <Button className="w-full h-14 text-xl bg-teal-600 hover:bg-teal-700 text-white">
+                  Get Started
+                </Button>
               </div>
-            </motion.div>
-          </>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </header>
