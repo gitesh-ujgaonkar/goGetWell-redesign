@@ -114,9 +114,9 @@ export default function Header() {
       <AnimatePresence>
         {isMenuOpen && (
           <>
-            {/* Background Blur Layer */}
+            {/* Background Blur Layer - Full Screen Dark Overlay */}
             <motion.div 
-              className="md:hidden fixed inset-0 top-16 z-40 bg-black/70 backdrop-blur-lg"
+              className="md:hidden fixed inset-0 z-40 bg-black/90"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -125,7 +125,7 @@ export default function Header() {
             
             {/* Menu Content */}
             <motion.div
-              className="md:hidden fixed inset-0 top-16 z-50 bg-gray-950/85 dark:bg-gray-900/90 backdrop-blur-xl p-6 flex flex-col gap-8"
+              className="md:hidden fixed inset-x-0 top-16 bottom-0 z-50 bg-gray-950/95 p-6 flex flex-col gap-8"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
