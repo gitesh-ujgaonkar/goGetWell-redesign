@@ -116,7 +116,7 @@ export default function Header() {
           <>
             {/* Background Blur Layer */}
             <motion.div 
-              className="md:hidden fixed inset-0 top-16 z-40 bg-white/40 dark:bg-gray-900/40 backdrop-blur-md"
+              className="md:hidden fixed inset-0 top-16 z-40 bg-white/25 dark:bg-gray-900/25 backdrop-blur-md"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
