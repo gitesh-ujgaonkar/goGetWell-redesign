@@ -114,9 +114,9 @@ export default function Header() {
       <AnimatePresence>
         {isMenuOpen && (
           <>
-            {/* Background Blur Layer - Full Screen Dark Overlay */}
+            {/* Full Screen Black Overlay */}
             <motion.div 
-              className="md:hidden fixed inset-0 z-40 bg-black/90"
+              className="md:hidden fixed inset-0 top-0 z-40 bg-black/95"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -125,61 +125,63 @@ export default function Header() {
             
             {/* Menu Content */}
             <motion.div
-              className="md:hidden fixed inset-x-0 top-16 bottom-0 z-50 bg-gray-950/95 p-6 flex flex-col gap-8"
+              className="md:hidden fixed inset-x-0 top-16 bottom-0 z-50 bg-gray-950 border-t border-gray-800 px-5 py-6 overflow-y-auto"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <nav className="flex flex-col gap-4">
-                <Link
-                  href="#features"
-                  className="text-lg font-medium text-white hover:text-teal-400 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Features
-                </Link>
-                <Link
-                  href="#about"
-                  className="text-lg font-medium text-white hover:text-teal-400 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About Us
-                </Link>
-                <Link
-                  href="#solutions"
-                  className="text-lg font-medium text-white hover:text-teal-400 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Solutions
-                </Link>
-                <Link
-                  href="#testimonials"
-                  className="text-lg font-medium text-white hover:text-teal-400 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Testimonials
-                </Link>
-                <Link
-                  href="#faq"
-                  className="text-lg font-medium text-white hover:text-teal-400 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  FAQ
-                </Link>
-                <Link
-                  href="#contact"
-                  className="text-lg font-medium text-white hover:text-teal-400 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Contact
-                </Link>
-              </nav>
-              <div className="flex flex-col gap-3 mt-auto">
-                <Button variant="outline" className="w-full border-gray-700 text-white hover:bg-gray-800">
-                  Log In
-                </Button>
-                <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white">Get Started</Button>
+              <div className="max-w-md mx-auto flex flex-col h-full">
+                <nav className="flex flex-col gap-5 mb-auto">
+                  <Link
+                    href="#features"
+                    className="text-lg font-medium text-white hover:text-teal-400 transition-colors py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Features
+                  </Link>
+                  <Link
+                    href="#about"
+                    className="text-lg font-medium text-white hover:text-teal-400 transition-colors py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    About Us
+                  </Link>
+                  <Link
+                    href="#solutions"
+                    className="text-lg font-medium text-white hover:text-teal-400 transition-colors py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Solutions
+                  </Link>
+                  <Link
+                    href="#testimonials"
+                    className="text-lg font-medium text-white hover:text-teal-400 transition-colors py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Testimonials
+                  </Link>
+                  <Link
+                    href="#faq"
+                    className="text-lg font-medium text-white hover:text-teal-400 transition-colors py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    FAQ
+                  </Link>
+                  <Link
+                    href="#contact"
+                    className="text-lg font-medium text-white hover:text-teal-400 transition-colors py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Contact
+                  </Link>
+                </nav>
+                <div className="flex flex-col gap-3 mt-6 mb-6">
+                  <Button variant="outline" className="w-full border-gray-700 text-white hover:bg-gray-800">
+                    Log In
+                  </Button>
+                  <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white">Get Started</Button>
+                </div>
               </div>
             </motion.div>
           </>
