@@ -116,7 +116,7 @@ export default function Header() {
           <>
             {/* Background Blur Layer */}
             <motion.div 
-              className="md:hidden fixed inset-0 top-16 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl"
+              className="md:hidden fixed inset-0 top-16 z-40 bg-white/40 dark:bg-gray-900/40 backdrop-blur-md"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -125,7 +125,7 @@ export default function Header() {
             
             {/* Menu Content */}
             <motion.div
-              className="md:hidden fixed inset-0 top-16 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-2xl p-6 flex flex-col gap-8"
+              className="md:hidden fixed inset-0 top-16 z-50 bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg p-6 flex flex-col gap-8"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
