@@ -16,56 +16,56 @@ import {
 export default function Solutions() {
   const solutions = [
     {
-      icon: <Globe className="h-6 w-6 text-blue-600" />,
+      icon: <Globe className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />,
       title: "Custom AI-Powered Website",
       description:
         "Intelligent, responsive websites tailored to healthcare providers with automated patient interactions.",
       color: "blue",
     },
     {
-      icon: <Users className="h-6 w-6 text-purple-600" />,
+      icon: <Users className="h-5 w-5 sm:h-6 sm:w-6 text-purple-600" />,
       title: "Enhanced Patient Conversion",
       description: "Smart conversion optimization tools to turn visitors into patients with personalized experiences.",
       color: "purple",
     },
     {
-      icon: <MessageSquare className="h-6 w-6 text-green-600" />,
+      icon: <MessageSquare className="h-5 w-5 sm:h-6 sm:w-6 text-green-600" />,
       title: "Real-Time Query Handling",
       description: "Instant response system for patient inquiries with AI-powered chat support.",
       color: "green",
     },
     {
-      icon: <FileText className="h-6 w-6 text-orange-600" />,
+      icon: <FileText className="h-5 w-5 sm:h-6 sm:w-6 text-orange-600" />,
       title: "Medical Report Analysis",
       description: "Advanced AI analysis of medical reports for quick and accurate patient assessments.",
       color: "orange",
     },
     {
-      icon: <TrendingUp className="h-6 w-6 text-pink-600" />,
+      icon: <TrendingUp className="h-5 w-5 sm:h-6 sm:w-6 text-pink-600" />,
       title: "Improved Lead Generation",
       description: "Data-driven lead generation strategies to attract and engage potential patients.",
       color: "pink",
     },
     {
-      icon: <Database className="h-6 w-6 text-indigo-600" />,
+      icon: <Database className="h-5 w-5 sm:h-6 sm:w-6 text-indigo-600" />,
       title: "Comprehensive Healthcare Database",
       description: "Extensive medical information database for accurate patient guidance and support.",
       color: "indigo",
     },
     {
-      icon: <Languages className="h-6 w-6 text-red-600" />,
+      icon: <Languages className="h-5 w-5 sm:h-6 sm:w-6 text-red-600" />,
       title: "Multilingual Support",
       description: "Breaking language barriers with comprehensive multilingual communication tools.",
       color: "red",
     },
     {
-      icon: <CreditCard className="h-6 w-6 text-teal-600" />,
+      icon: <CreditCard className="h-5 w-5 sm:h-6 sm:w-6 text-teal-600" />,
       title: "Seamless Payment Handling",
       description: "Secure and efficient payment processing for medical services globally.",
       color: "teal",
     },
     {
-      icon: <Search className="h-6 w-6 text-cyan-600" />,
+      icon: <Search className="h-5 w-5 sm:h-6 sm:w-6 text-cyan-600" />,
       title: "Marketing And SEO Support",
       description: "Optimized digital presence with advanced SEO and marketing strategies.",
       color: "cyan",
@@ -121,7 +121,7 @@ export default function Solutions() {
     <section className="w-full py-16 md:py-24 lg:py-32 bg-white dark:bg-gray-900" id="solutions">
       <div className="container px-4 md:px-6">
         <motion.div
-          className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+          className="flex flex-col items-center justify-center space-y-4 text-center mb-10 md:mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -140,20 +140,20 @@ export default function Solutions() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {solutions.map((solution, index) => (
             <motion.div
               key={index}
-              className={`rounded-xl border ${getBorderColor(solution.color)} bg-gradient-to-br ${getGradient(solution.color)} p-6 shadow-sm transition-all duration-200 hover:shadow-md dark:shadow-gray-800/10`}
+              className={`rounded-xl border ${getBorderColor(solution.color)} bg-gradient-to-br ${getGradient(solution.color)} p-4 sm:p-6 shadow-sm transition-all duration-200 hover:shadow-md dark:shadow-gray-800/10`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
-              <div className={`${getIconBg(solution.color)} rounded-lg p-3 w-fit mb-4`}>{solution.icon}</div>
-              <h3 className="text-xl font-bold mb-2 dark:text-white">{solution.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{solution.description}</p>
+              <div className={`${getIconBg(solution.color)} rounded-lg p-2 sm:p-3 w-fit mb-3 sm:mb-4`}>{solution.icon}</div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 dark:text-white">{solution.title}</h3>
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">{solution.description}</p>
             </motion.div>
           ))}
         </div>

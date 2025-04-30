@@ -46,7 +46,7 @@ export default function ContactUs() {
     >
       <div className="container px-4 md:px-6">
         <motion.div
-          className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+          className="flex flex-col items-center justify-center space-y-4 text-center mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -68,13 +68,14 @@ export default function ContactUs() {
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Contact Form */}
           <motion.div
-            className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm p-6 md:p-8"
+            className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm p-5 sm:p-8"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <h3 className="text-xl font-bold mb-5 dark:text-white md:hidden">Send Us a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div className="space-y-2">
                 <label
                   htmlFor="name"
@@ -124,7 +125,7 @@ export default function ContactUs() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="min-h-[150px] bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700"
+                  className="min-h-[120px] sm:min-h-[150px] bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700"
                 />
               </div>
               <Button
@@ -149,17 +150,17 @@ export default function ContactUs() {
 
           {/* Contact Info */}
           <motion.div
-            className="space-y-8"
+            className="space-y-6"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm p-6 md:p-8">
+            <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm p-5 sm:p-8">
               <h3 className="text-xl font-bold mb-4 dark:text-white">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-teal-100 dark:bg-teal-900/30 p-3 rounded-full">
+                  <div className="bg-teal-100 dark:bg-teal-900/30 p-3 rounded-full flex-shrink-0">
                     <Phone className="h-5 w-5 text-teal-600 dark:text-teal-400" />
                   </div>
                   <div>
@@ -168,16 +169,16 @@ export default function ContactUs() {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="bg-teal-100 dark:bg-teal-900/30 p-3 rounded-full">
+                  <div className="bg-teal-100 dark:bg-teal-900/30 p-3 rounded-full flex-shrink-0">
                     <Mail className="h-5 w-5 text-teal-600 dark:text-teal-400" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
-                    <p className="font-medium dark:text-white">hello@gogetwell.ai</p>
+                    <p className="font-medium dark:text-white break-all">hello@gogetwell.ai</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <div className="bg-teal-100 dark:bg-teal-900/30 p-3 rounded-full">
+                  <div className="bg-teal-100 dark:bg-teal-900/30 p-3 rounded-full flex-shrink-0">
                     <MessageSquare className="h-5 w-5 text-teal-600 dark:text-teal-400" />
                   </div>
                   <div>
@@ -188,7 +189,7 @@ export default function ContactUs() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm p-6 md:p-8">
+            <div className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm p-5 sm:p-8">
               <h3 className="text-xl font-bold mb-4 dark:text-white">Connect With Us</h3>
               <p className="text-gray-500 dark:text-gray-400 mb-4">
                 Follow us on social media for the latest updates and healthcare insights.

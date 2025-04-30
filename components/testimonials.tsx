@@ -64,7 +64,7 @@ export default function Testimonials() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 mt-12">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 mt-12">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -73,13 +73,14 @@ export default function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              className="flex"
             >
-              <Card className="h-full overflow-hidden border-gray-200 dark:border-gray-800 dark:bg-gray-900">
+              <Card className="flex flex-col h-full overflow-hidden border-gray-200 dark:border-gray-800 dark:bg-gray-900">
                 <CardContent className="p-6 flex flex-col gap-4 h-full">
                   <QuoteIcon className="h-8 w-8 text-teal-600 dark:text-teal-400 opacity-70" />
                   <p className="text-gray-700 dark:text-gray-300 italic flex-grow">{testimonial.quote}</p>
                   <div className="flex items-center gap-4 mt-4">
-                    <div className="rounded-full overflow-hidden h-12 w-12 border border-gray-200 dark:border-gray-700">
+                    <div className="rounded-full overflow-hidden h-12 w-12 border border-gray-200 dark:border-gray-700 flex-shrink-0">
                       <Image
                         src={testimonial.avatar || "/placeholder.svg"}
                         alt={testimonial.author}
@@ -88,9 +89,9 @@ export default function Testimonials() {
                         className="object-cover"
                       />
                     </div>
-                    <div>
-                      <h4 className="font-semibold dark:text-white">{testimonial.author}</h4>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}</p>
+                    <div className="min-w-0">
+                      <h4 className="font-semibold dark:text-white truncate">{testimonial.author}</h4>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 truncate">{testimonial.role}</p>
                     </div>
                   </div>
                   <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
@@ -116,7 +117,7 @@ export default function Testimonials() {
           transition={{ duration: 0.5 }}
         >
           <p className="text-center text-gray-500 dark:text-gray-400 mb-6">Trusted by leading healthcare providers</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
             {companyLogos.map((logo, index) => (
               <div
                 key={index}
@@ -125,7 +126,7 @@ export default function Testimonials() {
                 <Image
                   src={logo || "/placeholder.svg"}
                   alt="Partner company logo"
-                  width={120}
+                  width={100}
                   height={40}
                   className="h-8 w-auto object-contain"
                 />

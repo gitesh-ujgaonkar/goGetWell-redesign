@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
-import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone, MessageSquare, Send } from "lucide-react"
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MessageSquare, Send } from "lucide-react"
 import { motion } from "framer-motion"
 import { toast } from "@/hooks/use-toast"
 import { useState } from "react"
@@ -32,7 +32,7 @@ export default function Footer() {
   return (
     <footer className="w-full py-12 md:py-16 lg:py-20 bg-gray-900 text-gray-200">
       <div className="container px-4 md:px-6">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <motion.div
             className="space-y-4"
             initial={{ opacity: 0, y: 20 }}
@@ -43,34 +43,30 @@ export default function Footer() {
             <h3 className="text-lg font-bold">GoGetWell AI</h3>
             <p className="text-gray-400">Transforming healthcare with AI-powered solutions for medical tourism.</p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Facebook">
                 <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
               </Link>
-              <Link href="https://twitter.com" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="https://twitter.com" className="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
                 <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
                 <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
               </Link>
-              <Link href="https://linkedin.com" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="https://linkedin.com" className="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
               </Link>
             </div>
             <div className="pt-4 space-y-2">
               <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-teal-400" />
+                <Phone className="h-4 w-4 text-teal-400 flex-shrink-0" />
                 <span className="text-sm">+91 9811396858</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-teal-400" />
-                <span className="text-sm">hello@gogetwell.ai</span>
+                <Mail className="h-4 w-4 text-teal-400 flex-shrink-0" />
+                <span className="text-sm break-all">hello@gogetwell.ai</span>
               </div>
               <div className="flex items-center gap-2">
-                <MessageSquare className="h-4 w-4 text-teal-400" />
+                <MessageSquare className="h-4 w-4 text-teal-400 flex-shrink-0" />
                 <span className="text-sm">Live Chat Available 24/7</span>
               </div>
             </div>
@@ -164,18 +160,18 @@ export default function Footer() {
           >
             <h3 className="text-lg font-bold">Subscribe</h3>
             <p className="text-gray-400">Stay updated with the latest news and features</p>
-            <form onSubmit={handleSubscribe} className="flex space-x-2">
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
               <Input
                 type="email"
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="bg-gray-800 border-gray-700 text-white focus:ring-teal-500 focus:border-teal-500"
+                className="bg-gray-800 border-gray-700 text-white focus:ring-teal-500 focus:border-teal-500 min-h-10"
               />
               <Button 
                 type="submit" 
-                className="bg-teal-600 hover:bg-teal-700 text-white"
+                className="bg-teal-600 hover:bg-teal-700 text-white whitespace-nowrap"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
