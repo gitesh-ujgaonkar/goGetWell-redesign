@@ -36,85 +36,87 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-gray-900/95 dark:border-gray-800">
-      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-        <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center space-x-2">
-            <motion.span
-              className="text-xl font-bold text-teal-600 dark:text-teal-400"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
+    <>
+      <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:bg-gray-900/95 dark:border-gray-800">
+        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+          <div className="flex items-center gap-2">
+            <Link href="/" className="flex items-center space-x-2">
+              <motion.span
+                className="text-xl font-bold text-teal-600 dark:text-teal-400"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                GoGetWell AI
+              </motion.span>
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex gap-6">
+            <Link
+              href="#features"
+              className="text-sm font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
             >
-              GoGetWell AI
-            </motion.span>
-          </Link>
+              Features
+            </Link>
+            <Link
+              href="#about"
+              className="text-sm font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+            >
+              About Us
+            </Link>
+            <Link
+              href="#solutions"
+              className="text-sm font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+            >
+              Solutions
+            </Link>
+            <Link
+              href="#testimonials"
+              className="text-sm font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+            >
+              Testimonials
+            </Link>
+            <Link
+              href="#faq"
+              className="text-sm font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+            >
+              FAQ
+            </Link>
+            <Link
+              href="#contact"
+              className="text-sm font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+            >
+              Contact
+            </Link>
+          </nav>
+
+          <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle />
+            <Button variant="outline" size="sm" className="dark:border-gray-700 dark:text-gray-300">
+              Log In
+            </Button>
+            <Button size="sm" className="bg-teal-600 hover:bg-teal-700 text-white">
+              Get Started
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="flex items-center md:hidden gap-2">
+            <ThemeToggle />
+            <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMenu} aria-label="Toggle Menu">
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
         </div>
+      </header>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6">
-          <Link
-            href="#features"
-            className="text-sm font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
-          >
-            Features
-          </Link>
-          <Link
-            href="#about"
-            className="text-sm font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
-          >
-            About Us
-          </Link>
-          <Link
-            href="#solutions"
-            className="text-sm font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
-          >
-            Solutions
-          </Link>
-          <Link
-            href="#testimonials"
-            className="text-sm font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
-          >
-            Testimonials
-          </Link>
-          <Link
-            href="#faq"
-            className="text-sm font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
-          >
-            FAQ
-          </Link>
-          <Link
-            href="#contact"
-            className="text-sm font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
-          >
-            Contact
-          </Link>
-        </nav>
-
-        <div className="hidden md:flex items-center gap-4">
-          <ThemeToggle />
-          <Button variant="outline" size="sm" className="dark:border-gray-700 dark:text-gray-300">
-            Log In
-          </Button>
-          <Button size="sm" className="bg-teal-600 hover:bg-teal-700 text-white">
-            Get Started
-          </Button>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="flex items-center md:hidden gap-2">
-          <ThemeToggle />
-          <Button variant="ghost" size="icon" className="md:hidden" onClick={toggleMenu} aria-label="Toggle Menu">
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
-        </div>
-      </div>
-
-      {/* Mobile Menu Overlay */}
+      {/* Independent Mobile Menu (overlay) */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div 
-            className="md:hidden fixed inset-0 z-40 bg-black flex flex-col"
+            className="fixed inset-0 z-[100] bg-black flex flex-col"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -189,6 +191,6 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   )
 }
