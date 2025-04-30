@@ -159,12 +159,12 @@ export default function Pricing() {
           
           {/* Billing toggle */}
           <div className="flex items-center space-x-4 mt-4">
-            <Tabs value={billingPeriod} onValueChange={handleTabChange} className="w-56">
+            <Tabs value={billingPeriod} onValueChange={handleTabChange} className="w-full max-w-[280px]">
               <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="monthly">Monthly</TabsTrigger>
-                <TabsTrigger value="annually">
+                <TabsTrigger value="monthly" className="px-4 py-2">Monthly</TabsTrigger>
+                <TabsTrigger value="annually" className="px-4 py-2 relative flex items-center justify-center">
                   <span>Annual</span>
-                  <span className="ml-2 bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-xs px-2 py-0.5 rounded-full">
+                  <span className="ml-1.5 bg-teal-100 dark:bg-teal-900 text-teal-600 dark:text-teal-400 text-[10px] px-1.5 py-0.5 rounded-full whitespace-nowrap">
                     33% off
                   </span>
                 </TabsTrigger>

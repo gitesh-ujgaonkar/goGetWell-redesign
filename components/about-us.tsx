@@ -43,6 +43,9 @@ export default function AboutUs() {
             transition={{ duration: 0.6 }}
           >
             <div className="space-y-2">
+              <div className="inline-block rounded-lg bg-teal-100 dark:bg-teal-900/30 px-3 py-1 text-sm text-teal-600 dark:text-teal-400">
+                Who We Are
+              </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight dark:text-white">About Us</h2>
             </div>
 
