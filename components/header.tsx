@@ -125,62 +125,62 @@ export default function Header() {
             
             {/* Menu Content */}
             <motion.div
-              className="md:hidden fixed inset-x-0 top-16 bottom-0 z-50 bg-gray-950 border-t border-gray-800 px-5 py-6 overflow-y-auto"
+              className="md:hidden fixed inset-x-0 top-16 bottom-0 z-50 bg-gray-950 border-t border-gray-800 px-5 py-8 overflow-y-auto"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="max-w-md mx-auto flex flex-col h-full">
-                <nav className="flex flex-col gap-5 mb-auto">
+              <div className="max-w-md mx-auto flex flex-col min-h-[500px] justify-between">
+                <nav className="flex flex-col">
                   <Link
                     href="#features"
-                    className="text-lg font-medium text-white hover:text-teal-400 transition-colors py-2"
+                    className="text-xl font-medium text-white hover:text-teal-400 transition-colors py-4 border-b border-gray-800/50"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Features
                   </Link>
                   <Link
                     href="#about"
-                    className="text-lg font-medium text-white hover:text-teal-400 transition-colors py-2"
+                    className="text-xl font-medium text-white hover:text-teal-400 transition-colors py-4 border-b border-gray-800/50"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     About Us
                   </Link>
                   <Link
                     href="#solutions"
-                    className="text-lg font-medium text-white hover:text-teal-400 transition-colors py-2"
+                    className="text-xl font-medium text-white hover:text-teal-400 transition-colors py-4 border-b border-gray-800/50"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Solutions
                   </Link>
                   <Link
                     href="#testimonials"
-                    className="text-lg font-medium text-white hover:text-teal-400 transition-colors py-2"
+                    className="text-xl font-medium text-white hover:text-teal-400 transition-colors py-4 border-b border-gray-800/50"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Testimonials
                   </Link>
                   <Link
                     href="#faq"
-                    className="text-lg font-medium text-white hover:text-teal-400 transition-colors py-2"
+                    className="text-xl font-medium text-white hover:text-teal-400 transition-colors py-4 border-b border-gray-800/50"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     FAQ
                   </Link>
                   <Link
                     href="#contact"
-                    className="text-lg font-medium text-white hover:text-teal-400 transition-colors py-2"
+                    className="text-xl font-medium text-white hover:text-teal-400 transition-colors py-4"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Contact
                   </Link>
                 </nav>
-                <div className="flex flex-col gap-3 mt-6 mb-6">
-                  <Button variant="outline" className="w-full border-gray-700 text-white hover:bg-gray-800">
+                <div className="flex flex-col gap-4 mt-10 mb-6">
+                  <Button variant="outline" className="w-full h-12 border-gray-700 text-white hover:bg-gray-800 text-lg">
                     Log In
                   </Button>
-                  <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white">Get Started</Button>
+                  <Button className="w-full h-12 bg-teal-600 hover:bg-teal-700 text-white text-lg">Get Started</Button>
                 </div>
               </div>
             </motion.div>
