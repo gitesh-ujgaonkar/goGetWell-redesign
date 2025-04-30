@@ -52,7 +52,7 @@ export default function Hero() {
           >
             <div className="relative w-full max-w-[500px] aspect-square md:aspect-video overflow-hidden rounded-xl shadow-xl">
               <Image
-                src="/placeholder.svg?height=600&width=800"
+                src="/hero.png"
                 alt="GoGetWell AI Platform Dashboard"
                 width={800}
                 height={600}
