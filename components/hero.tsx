@@ -50,51 +50,15 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="relative w-full max-w-[500px] aspect-square md:aspect-video overflow-hidden rounded-xl shadow-xl">
+            <div className="relative w-full h-full max-w-md mx-auto overflow-hidden rounded-xl shadow-xl">
               <Image
                 src="/hero.png"
                 alt="GoGetWell AI Platform Dashboard"
                 width={800}
                 height={600}
-                className="object-cover dark:opacity-90"
+                className="w-full h-auto object-contain"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-teal-500/20 to-transparent rounded-xl" />
-
-              {/* Floating UI Elements */}
-              <motion.div
-                className="absolute top-1/4 right-1/4 z-20"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.5 }}
-              >
-                <div className="relative">
-                  <div className="absolute -inset-[5px] bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-lg" />
-                  <div className="relative z-10 p-2 sm:p-3">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 rounded-full bg-teal-500" />
-                      <span className="text-xs sm:text-sm font-medium">Patient Inquiries +200%</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="absolute bottom-1/4 left-1/4 z-20"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.8, duration: 0.5 }}
-              >
-                <div className="relative">
-                  <div className="absolute -inset-[5px] bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-lg" />
-                  <div className="relative z-10 p-2 sm:p-3">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 rounded-full bg-purple-500" />
-                      <span className="text-xs sm:text-sm font-medium">24/7 AI Support</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
         </div>

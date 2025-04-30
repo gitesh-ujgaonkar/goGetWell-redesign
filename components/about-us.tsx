@@ -13,7 +13,6 @@ export default function AboutUs() {
     >
       <div className="container px-4 md:px-6">
         <div className="flex flex-col gap-8 lg:gap-16 lg:flex-row items-center">
-          {/* Left side - Image with animation */}
           <motion.div
             className="lg:w-1/2 relative"
             initial={{ opacity: 0, x: -20 }}
@@ -33,47 +32,9 @@ export default function AboutUs() {
                   priority
                 />
               </div>
-
-              {/* Floating elements overlaying the image with blur */}
-              <motion.div
-                className="absolute top-0 right-0 z-20"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-              >
-                <div className="relative">
-                  <div className="absolute -inset-[5px] bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-lg" />
-                  <div className="relative z-10 p-3">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 rounded-full bg-teal-500" />
-                      <span className="text-sm font-medium dark:text-white">Global Network</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="absolute bottom-10 left-0 z-20"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-              >
-                <div className="relative">
-                  <div className="absolute -inset-[5px] bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-lg" />
-                  <div className="relative z-10 p-3">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 rounded-full bg-purple-500" />
-                      <span className="text-sm font-medium dark:text-white">AI-Powered Care</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
 
-          {/* Right side - Text content */}
           <motion.div
             className="lg:w-1/2 space-y-6"
             initial={{ opacity: 0, x: 20 }}
@@ -82,24 +43,7 @@ export default function AboutUs() {
             transition={{ duration: 0.6 }}
           >
             <div className="space-y-2">
-              <div className="flex items-center space-x-2">
-                <div className="h-1 w-12 bg-teal-600 dark:bg-teal-400 rounded-full" />
-                <p className="text-teal-600 dark:text-teal-400 font-medium">Our Mission</p>
-              </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight dark:text-white">About Us</h2>
-            </div>
-
-            <div className="space-y-4">
-              <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
-                At GoGetWell AI, we're pioneering a revolutionary approach to medical tourism through our advanced
-                AI-driven platform. We tackle the industry's core challenges of inefficiency and fragmentation,
-                empowering healthcare providers to transform their operations, expand their patient base, and deliver
-                exceptional, personalized care that transcends geographical boundaries.
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
-                Our innovative solutions are meticulously designed to optimize processes and elevate the entire patient
-                journey, from initial inquiry to post-treatment follow-up.
-              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
