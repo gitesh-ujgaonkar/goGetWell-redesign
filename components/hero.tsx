@@ -17,11 +17,10 @@ export default function Hero() {
           >
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl dark:text-white">
-                AI-Powered Medical Tourism Platform
+              AI Front Office for Healthcare Agents
               </h1>
               <p className="max-w-[600px] text-gray-500 dark:text-gray-400 text-lg md:text-xl">
-                Connect healthcare providers with global patients through intelligent digital stores and 24/7 AI
-                support.
+              Create AI Store in 2 min, Scale with Digital Marketing
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
