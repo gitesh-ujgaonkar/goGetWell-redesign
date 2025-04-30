@@ -34,30 +34,40 @@ export default function AboutUs() {
                 />
               </div>
 
-              {/* Floating elements */}
+              {/* Floating elements overlaying the image with blur */}
               <motion.div
-                className="absolute top-0 right-0 bg-white dark:bg-gray-800 p-3 rounded-lg shadow-lg"
+                className="absolute top-0 right-0 z-20"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3, duration: 0.5 }}
               >
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-teal-500" />
-                  <span className="text-sm font-medium dark:text-white">Global Network</span>
+                <div className="relative">
+                  <div className="absolute -inset-[5px] bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-lg" />
+                  <div className="relative z-10 p-3">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-3 h-3 rounded-full bg-teal-500" />
+                      <span className="text-sm font-medium dark:text-white">Global Network</span>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
 
               <motion.div
-                className="absolute bottom-10 left-0 bg-white dark:bg-gray-800 p-3 rounded-lg shadow-lg"
+                className="absolute bottom-10 left-0 z-20"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5, duration: 0.5 }}
               >
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-purple-500" />
-                  <span className="text-sm font-medium dark:text-white">AI-Powered Care</span>
+                <div className="relative">
+                  <div className="absolute -inset-[5px] bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-lg" />
+                  <div className="relative z-10 p-3">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-3 h-3 rounded-full bg-purple-500" />
+                      <span className="text-sm font-medium dark:text-white">AI-Powered Care</span>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </div>
