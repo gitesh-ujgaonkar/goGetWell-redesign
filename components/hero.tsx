@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 
 export default function Hero() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-white">
       <div className="container px-4 md:px-6">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
           <motion.div
@@ -29,20 +29,21 @@ export default function Hero() {
               </Button>
         
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 text-center">
-          <div>
-            <div className="text-3xl md:text-4xl font-extrabold text-teal-600">21++</div>
-            <div className="text-sm md:text-base text-gray-500 dark:text-gray-400">Qualified Doctors</div>
-          </div>
-          <div>
-            <div className="text-3xl md:text-4xl font-extrabold text-teal-600">1000+</div>
-            <div className="text-sm md:text-base text-gray-500 dark:text-gray-400">Hospitals</div>
-          </div>
-          <div>
-            <div className="text-3xl md:text-4xl font-extrabold text-teal-600">800+</div>
-            <div className="text-sm md:text-base text-gray-500 dark:text-gray-400">Treatment Plans</div>
-          </div>
-      </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 text-center">
+  <div className="col-span-1">
+    <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-teal-600">2100++</div>
+    <div className="text-xs sm:text-sm md:text-base text-gray-500 dark:text-gray-400">Qualified Doctors</div>
+  </div>
+  <div className="col-span-1">
+    <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-teal-600">1000+</div>
+    <div className="text-xs sm:text-sm md:text-base text-gray-500 dark:text-gray-400">Hospitals</div>
+  </div>
+  <div className="col-span-2 sm:col-span-1">
+    <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-teal-600">800+</div>
+    <div className="text-xs sm:text-sm md:text-base text-gray-500 dark:text-gray-400">Treatment Plans</div>
+  </div>
+</div>
+
 
           </motion.div>
           <motion.div
