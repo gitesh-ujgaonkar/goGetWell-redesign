@@ -48,6 +48,29 @@ export default function AboutUs() {
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight dark:text-white">About Us</h2>
             </div>
+            <motion.div
+            className="lg:w-1/2 space-y-6"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="space-y-2">
+              <div className="inline-block rounded-lg bg-teal-100 dark:bg-teal-900/30 px-3 py-1 text-sm text-teal-600 dark:text-teal-400">
+                Who We Are
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight dark:text-white">
+                About Us
+              </h2>
+              <p className="text-gray-700 dark:text-gray-300 text-base md:text-lg">
+                We are a pioneering AI-driven platform focused on revolutionizing the medical tourism industry. 
+                By addressing inefficiencies and disorganization, we empower healthcare facilitators to modernize 
+                their operations, attract more patients, and deliver seamless, personalized care across borders.
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 text-base md:text-lg">
+                Our cutting-edge solutions are designed to streamline processes and enhance the overall patient experience.
+              </p>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
               <motion.div className="flex items-start space-x-3" whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
@@ -105,3 +128,10 @@ export default function AboutUs() {
     </section>
   )
 }
+<motion.div
+  className="lg:w-1/2 space-y-6"
+  initial={{ opacity: 0, x: 20 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+>
