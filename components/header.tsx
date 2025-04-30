@@ -116,7 +116,7 @@ export default function Header() {
           <>
             {/* Background Blur Layer */}
             <motion.div 
-              className="md:hidden fixed inset-0 top-16 z-40 bg-white/25 dark:bg-gray-900/25 backdrop-blur-md"
+              className="md:hidden fixed inset-0 top-16 z-40 bg-black/70 backdrop-blur-lg"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -125,7 +125,7 @@ export default function Header() {
             
             {/* Menu Content */}
             <motion.div
-              className="md:hidden fixed inset-0 top-16 z-50 bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg p-6 flex flex-col gap-8"
+              className="md:hidden fixed inset-0 top-16 z-50 bg-gray-950/85 dark:bg-gray-900/90 backdrop-blur-xl p-6 flex flex-col gap-8"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
@@ -134,49 +134,49 @@ export default function Header() {
               <nav className="flex flex-col gap-4">
                 <Link
                   href="#features"
-                  className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+                  className="text-lg font-medium text-white hover:text-teal-400 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Features
                 </Link>
                 <Link
                   href="#about"
-                  className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+                  className="text-lg font-medium text-white hover:text-teal-400 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   About Us
                 </Link>
                 <Link
                   href="#solutions"
-                  className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+                  className="text-lg font-medium text-white hover:text-teal-400 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Solutions
                 </Link>
                 <Link
                   href="#testimonials"
-                  className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+                  className="text-lg font-medium text-white hover:text-teal-400 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Testimonials
                 </Link>
                 <Link
                   href="#faq"
-                  className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+                  className="text-lg font-medium text-white hover:text-teal-400 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   FAQ
                 </Link>
                 <Link
                   href="#contact"
-                  className="text-lg font-medium hover:text-teal-600 dark:text-gray-300 dark:hover:text-teal-400 transition-colors"
+                  className="text-lg font-medium text-white hover:text-teal-400 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contact
                 </Link>
               </nav>
               <div className="flex flex-col gap-3 mt-auto">
-                <Button variant="outline" className="w-full dark:border-gray-700 dark:text-gray-300">
+                <Button variant="outline" className="w-full border-gray-700 text-white hover:bg-gray-800">
                   Log In
                 </Button>
                 <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white">Get Started</Button>
